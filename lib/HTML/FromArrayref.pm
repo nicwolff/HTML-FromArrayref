@@ -17,11 +17,11 @@ HTML::FromArrayref - Output HTML described by a Perl data structure
 
 =head1 VERSION
 
-Version 1.0
+Version 1.01
 
 =cut
 
-our $VERSION = '1.0';
+our $VERSION = '1.01';
 
 =head1 SYNOPSIS
 
