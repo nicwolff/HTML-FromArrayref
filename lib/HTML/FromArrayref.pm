@@ -55,7 +55,7 @@ is an optional hashref defining the element's attributes. If an attribute's valu
 
 =head3 @content
 
-is another list of strings and arrayrefs, which will be used to generate the content of the element. If the content list is empty, then the element has no content and will be represented in the generated HTML string by a single tag that ends with " B</E<gt>>".
+is another list of strings and arrayrefs, which will be used to generate the content of the element. If the content list is empty, then the element has no content and will be represented in the generated HTML string by adjacent start and end tags. The content of elements that are defined in the HTML 4.01 specification as "void" will be discarded, and only their start tag will be printed.
 
 =cut
 
