@@ -71,12 +71,17 @@ Recursively renders HTML elements from arrayrefs
 
 =cut
 
+my %void; @void{ qw(
+	area base br col command embed hr img input
+	keygen link meta param source track wbr
+) } = (1)x16;
+
 sub element {
-	my ( $element_name, $attributes, @content ) = @_;
+	my ( $tag_name, $attributes, @content ) = @_;
 
 	# If an element's name is an array ref then it's
 	# really text to print without encoding
-	return $element_name->[0] if ref $element_name eq 'ARRAY';
+	return $tag_name->[0] if ref $tag_name eq 'ARRAY';
 
 	# If the second item in the list is not a hashref,
 	# then the element has no attributes
@@ -87,15 +92,14 @@ sub element {
 
 	# If the first expression in the list is false, then skip
 	# the element and return its content instead
-	return HTML( @content ) if not $element_name;
+	return HTML( @content ) if not $tag_name;
 
 	# Return the element start tag with its formatted and
 	# encoded attributes, and (optionally) content and
 	# end tag
 	join '', grep $_,
-		'<', lc $element_name, attributes( %$attributes ), ! @content && ' /', '>',
-		HTML( @content ),
-		@content && "</$element_name>";
+		'<', $tag_name, attributes( %$attributes ), '>',
+		! $void{ lc $tag_name } && ( HTML( @content ), "</$tag_name>" );
 }
 
 =head2 start_tag()
@@ -105,10 +109,10 @@ Takes a list with an element name and an optional hashref defining the element's
 =cut
 
 sub start_tag {
-	my ( $element_name, $attributes ) = @_;
+	my ( $tag_name, $attributes ) = @_;
 
 	join '', grep $_,
-		'<', lc $element_name, attributes( %$attributes ), '>';
+		'<', $tag_name, attributes( %$attributes ), '>';
 }
 
 =head2 end_tag()

@@ -24,6 +24,24 @@ is(
 );
 
 is(
+	HTML( [ p => { attrib => undef }, 'foo' ] ),
+	'<p>foo</p>',
+	'skips attribute with undefined values'
+);
+
+is(
+	HTML( [ img => { src => 'image.png' }, 'foo' ], ['br'] ),
+	'<img src="image.png"><br>',
+	'prints void HTML elements without closing tags'
+);
+
+is(
+	HTML( [ p => undef ] ),
+	'<p></p>',
+	'prints non-void empty elements with closing tags'
+);
+
+is(
 	HTML( [ p => [ b => 'bold' ], 'foo' ] ),
 	'<p><b>bold</b>foo</p>',
 	'prints nested HTML elements'
@@ -39,6 +57,12 @@ is(
 	HTML( [ p => 'foo', [[ '<i>italics</i>' ]] ] ),
 	'<p>foo<i>italics</i></p>',
 	'leaves already-escaped text alone'
+);
+
+is(
+	start_tag( p => { class => 'test-class' } ),
+	'<p class="test-class">',
+	'prints a start tag'
 );
 
 done_testing();
