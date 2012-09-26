@@ -20,15 +20,15 @@ HTML::FromArrayref - Output HTML described by a Perl data structure
 
 =head1 VERSION
 
-Version 1.01
+Version 1.03
 
 =cut
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 =head1 SYNOPSIS
 
-  use Angel::HTML;
+  use HTML::FromArrayref;
   print HTML [ html => [ head => [ title => 'My Web page' ] ], [ body => 'Hello' ] ];
 
 =head1 EXPORT
