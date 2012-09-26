@@ -60,10 +60,9 @@ is another list of strings and arrayrefs, which will be used to generate the con
 =cut
 
 sub HTML (@) {
-	join '',
-		grep $_,
-			map { ref $_ eq 'ARRAY' ? element( @$_ ) : encode_entities( $_ ) }
-				@_;
+	join '', grep $_, map {
+		ref $_ eq 'ARRAY' ? element( @$_ ) : encode_entities( $_ )
+	} @_;
 }
 
 =head2 element()
