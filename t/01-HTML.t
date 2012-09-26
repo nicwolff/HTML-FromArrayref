@@ -1,6 +1,6 @@
 #!perl -T
 
-use Test::More tests => 6;
+use Test::More;
 
 BEGIN { use_ok('HTML::FromArrayref'); }
 
@@ -33,3 +33,5 @@ is(
 	'<p>foo<i>italics</i></p>',
 	'leaves already-escaped text alone'
 );
+
+done_testing();
