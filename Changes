@@ -1,5 +1,8 @@
 Revision history for HTML-FromArrayref
 
-0.01    Date/time
+1.01    2011-12-05
         First version, released on an unsuspecting world.
 
+1.02	2012-09-26
+	Output valid HTML 4.01 instead of reverse-compatible XHTML
+	Add doctype functions
