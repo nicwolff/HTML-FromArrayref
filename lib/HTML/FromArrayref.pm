@@ -21,7 +21,7 @@ Version 1.01
 
 =cut
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 =head1 SYNOPSIS
 
@@ -258,7 +258,7 @@ L<http://search.cpan.org/dist/HTML-FromArrayref/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2011 Nic Wolff.
+Copyright 2012 Nic Wolff.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
