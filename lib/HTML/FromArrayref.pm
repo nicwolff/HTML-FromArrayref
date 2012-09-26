@@ -6,8 +6,11 @@ use warnings;
 
 use base qw( Exporter );
 our @EXPORT = qw( HTML );
-our @EXPORT_OK = qw( start_tag end_tag );
-our %EXPORT_TAGS = (TAGS => [qw( start_tag end_tag )]);
+our @EXPORT_OK = qw( start_tag end_tag html_strict html_transitional html_frameset );
+our %EXPORT_TAGS = (
+	TAGS => [qw( start_tag end_tag )],
+	DOCTYPES => [qw( html_strict html_transitional html_frameset )]
+);
 
 use HTML::Entities;
 
@@ -135,6 +138,24 @@ sub attributes {
 	}
 	join ' ', '', @html;
 }
+
+=head2 DOCTYPEs
+
+These make it easy to add a valid doctype declaration to your document
+
+=cut
+
+sub html_strict { << '' }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+sub html_transitional { << '' }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+
+sub html_frameset { << '' }
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+	"http://www.w3.org/TR/html4/frameset.dtd">
 
 =head1 EXAMPLES
 
