@@ -232,7 +232,9 @@ would print
   <td colspan="3">
   </td>
 
-=cut
+=head1 SEE ALSO
+
+L<The HTML 4.01 specification|http://www.w3.org/TR/html401/>
 
 =head1 AUTHOR
 
