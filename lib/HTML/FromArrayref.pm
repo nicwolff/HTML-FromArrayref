@@ -242,12 +242,7 @@ Nic Wolff, <nic@angel.net>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-html-fromarrayref at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=HTML-FromArrayref>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
-
+Please report any bugs or feature requests through the web interface at L<https://github.com/nicwolff/HTML-FromArrayref/issues>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT
 
@@ -255,32 +250,27 @@ You can find documentation for this module with the perldoc command.
 
     perldoc HTML::FromArrayref
 
-
 You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker (report bugs here)
+=item * This module on GitHub
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=HTML-FromArrayref>
+L<https://github.com/nicwolff/HTML-FromArrayref>
+
+=item * GitHub request tracker (report bugs here)
+
+L<https://github.com/nicwolff/HTML-FromArrayref/issues>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
 L<http://annocpan.org/dist/HTML-FromArrayref>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/HTML-FromArrayref>
 
 =item * Search CPAN
 
 L<http://search.cpan.org/dist/HTML-FromArrayref/>
 
 =back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
@@ -291,7 +281,6 @@ under the terms of either: the GNU General Public License as published
 by the Free Software Foundation; or the Artistic License.
 
 See http://dev.perl.org/licenses/ for more information.
-
 
 =cut
 
