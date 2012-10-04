@@ -10,10 +10,10 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/HTML/FromArrayref.pm',
     build_requires => {
         'Test::More' => 0,
-	'HTML::Entities' => 0,
     },
     requires => {
         'perl' => 5.006,
+	'HTML::Entities' => 0,
     },
     add_to_cleanup      => [ 'HTML-FromArrayref-*' ],
     create_makefile_pl => 'traditional',
