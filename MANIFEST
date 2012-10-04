@@ -9,4 +9,3 @@ t/01-HTML.t
 t/02-tags.t
 Makefile.PL
 META.yml
-META.json
