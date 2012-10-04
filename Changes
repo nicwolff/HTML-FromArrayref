@@ -12,3 +12,6 @@ Revision history for HTML-FromArrayref
 
 1.04	2012-09-27
 	Add HTML::Entities to prerequisites
+
+1.05	2012-10-04
+	Archive with GNU tar
