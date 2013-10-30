@@ -15,3 +15,6 @@ Revision history for HTML-FromArrayref
 
 1.05	2012-10-04
 	Archive with GNU tar
+
+1.06	2013-10-29
+	Don't skip false content

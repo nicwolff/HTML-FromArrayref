@@ -20,11 +20,11 @@ HTML::FromArrayref - Output HTML described by a Perl data structure
 
 =head1 VERSION
 
-Version 1.05
+Version 1.06
 
 =cut
 
-our $VERSION = '1.05';
+our $VERSION = '1.06';
 
 =head1 SYNOPSIS
 
@@ -60,7 +60,7 @@ is another list of strings and arrayrefs, which will be used to generate the con
 =cut
 
 sub HTML (@) {
-	join '', grep $_, map {
+	join '', grep defined $_, map {
 		ref $_ eq 'ARRAY' ? element( @$_ ) : encode_entities( $_ )
 	} @_;
 }
@@ -97,8 +97,7 @@ sub element {
 	# Return the element start tag with its formatted and
 	# encoded attributes, and (optionally) content and
 	# end tag
-	join '', grep $_,
-		'<', $tag_name, attributes( %$attributes ), '>',
+	join '', '<', $tag_name, attributes( %$attributes ), '>',
 		! $void{ lc $tag_name } && ( HTML( @content ), "</$tag_name>" );
 }
 
